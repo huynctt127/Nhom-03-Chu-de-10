@@ -1,3 +1,48 @@
+//==================================================
+// NHAP DANH SACH
+//==================================================
+
+void nhapdanhsach(Thuoc ds[], int n) {
+
+    // Nhap lan luot n thuoc
+    for (int i = 0; i < n; i++) {
+
+        cout << "\n========== THUOC THU "
+             << i + 1
+             << " ==========\n";
+
+        ds[i].nhap();       // Goi ham nhap cua tung thuoc
+    }
+}
+
+
+//==================================================
+// XUAT DANH SACH
+//==================================================
+
+void xuatdanhsach(Thuoc ds[], int n) {
+
+    // Xuat lan luot n thuoc
+    for (int i = 0; i < n; i++) {
+
+        cout << "\n========== THUOC THU "
+             << i + 1
+             << " ==========\n";
+
+        ds[i].xuat();       // Goi ham xuat cua tung thuoc
+    }
+}
+
+
+//==================================================
+// NHOM 1: TIM KIEM
+//==================================================
+
+
+//--------------------------------------------------
+// TIM THEO MA
+//--------------------------------------------------
+
 void timtheoma(Thuoc ds[], int n) {
 
     string ma;                  // Luu ma thuoc can tim
@@ -31,6 +76,11 @@ void timtheoma(Thuoc ds[], int n) {
         cout << "Khong tim thay thuoc!\n";
     }
 }
+
+
+//--------------------------------------------------
+// TIM THEO TEN
+//--------------------------------------------------
 
 void timtheoten(Thuoc ds[], int n) {
 
