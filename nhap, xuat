@@ -1,0 +1,89 @@
+#include <iostream>     // Thu vien nhap xuat: cin, cout
+#include <string>       // Thu vien su dung kieu string
+#include <cstdio>       // Thu vien chua ham sscanf()
+
+using namespace std;
+
+//==================================================
+// CLASS THUOC
+//==================================================
+
+class Thuoc {
+
+private:
+
+    // Cac thuoc tinh cua thuoc
+    string mathuoc;             // Ma thuoc
+    string tenthuoc;            // Ten thuoc
+    string hoatchat;            // Hoat chat
+    string donvitinh;           // Don vi tinh
+    float giaban;               // Gia ban
+    int soluongtonkho;          // So luong thuoc ton kho
+    string hansudung;           // Han su dung
+
+public:
+
+    //==================================================
+    // HAM NHAP
+    //==================================================
+
+    void nhap() {
+
+        cout << "Ma thuoc: ";
+        cin >> mathuoc;         // Nhap ma thuoc
+
+        cin.ignore();           // Xoa ky tu '\n' con lai sau cin
+
+        cout << "Ten thuoc: ";
+        getline(cin, tenthuoc); // Nhap ten thuoc, cho phep co khoang trang
+
+        cout << "Hoat chat: ";
+        getline(cin, hoatchat);  // Nhap hoat chat
+
+        cout << "Don vi tinh: ";
+        getline(cin, donvitinh); // Nhap don vi tinh
+
+        cout << "Gia ban: ";
+
+        // Kiem tra nguoi dung co nhap dung kieu so hay khong
+        while (!(cin >> giaban)) {
+
+            cout << "Gia ban phai la so! Nhap lai: ";
+
+            cin.clear();            // Xoa trang thai loi cua cin
+            cin.ignore(1000, '\n');  // Bo du lieu nhap sai trong bo dem
+        }
+
+        cout << "So luong ton kho: ";
+
+        // Kiem tra so luong ton kho phai la so nguyen
+        while (!(cin >> soluongtonkho)) {
+
+            cout << "So luong phai la so! Nhap lai: ";
+
+            cin.clear();            // Xoa trang thai loi
+            cin.ignore(1000, '\n');  // Bo du lieu nhap sai
+        }
+
+        cin.ignore();              // Xoa ky tu '\n' truoc khi dung getline()
+
+        cout << "Han su dung (dd/mm/yyyy): ";
+        getline(cin, hansudung);   // Nhap han su dung dang chuoi
+    }
+
+
+    //==================================================
+    // HAM XUAT
+    //==================================================
+
+    void xuat() {
+
+        // Xuat lan luot thong tin cua mot thuoc
+        cout << "Ma thuoc: " << mathuoc << endl;
+        cout << "Ten thuoc: " << tenthuoc << endl;
+        cout << "Hoat chat: " << hoatchat << endl;
+        cout << "Don vi tinh: " << donvitinh << endl;
+        cout << "Gia ban: " << giaban << endl;
+        cout << "So luong ton kho: " << soluongtonkho << endl;
+        cout << "Han su dung: " << hansudung << endl;
+    }
