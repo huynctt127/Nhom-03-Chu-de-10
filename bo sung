@@ -1,0 +1,52 @@
+//==================================================
+    // HAM BO SUNG
+    //==================================================
+
+    void bosung(Thuoc ds[], int &n, int k) {
+
+        // Kiem tra vi tri can bo sung
+        if (k < 1 || k > n + 1) {
+
+            cout << "Vi tri khong hop le!\n";
+
+            return;                 // Dung ham neu vi tri khong hop le
+        }
+
+        k--;    // Chuyen vi tri nguoi dung nhap (1,2,3...)
+                // thanh chi so mang (0,1,2...)
+
+        Thuoc thuocmoi;             // Tao mot doi tuong thuoc moi
+
+        cout << "\n========== NHAP THUOC MOI ==========\n";
+
+        thuocmoi.nhap();            // Nhap thong tin thuoc moi
+
+        // Dich cac phan tu sang phai de tao cho trong
+        for (int i = n; i > k; i--) {
+            ds[i] = ds[i - 1];
+        }
+
+        ds[k] = thuocmoi;            // Dua thuoc moi vao vi tri k
+
+        n++;                          // Tang so luong thuoc len 1
+
+        cout << "Bo sung thuoc thanh cong!\n";
+    }
+//==================================================
+// NHOM 3: BO SUNG
+//==================================================
+
+void bosungthuoc(Thuoc ds[], int &n) {
+
+    int k;                      // Vi tri can bo sung
+
+    cout << "Nhap vi tri can bo sung (1 -> "
+         << n + 1
+         << "): ";
+
+    cin >> k;                   // Nhap vi tri can bo sung
+
+    Thuoc t;                    // Tao doi tuong thuoc tam
+
+    t.bosung(ds, n, k);         // Goi ham bo sung thuoc
+}
