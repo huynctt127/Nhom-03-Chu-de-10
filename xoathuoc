@@ -1,0 +1,44 @@
+//==================================================
+    // HAM XOA
+    //==================================================
+
+    void xoa(Thuoc ds[], int &n, int k) {
+
+        // Kiem tra vi tri can xoa
+        if (k < 1 || k > n) {
+
+            cout << "Vi tri khong hop le!\n";
+
+            return;                  // Dung ham
+        }
+
+        k--;    // Chuyen vi tri tu 1,2,3... thanh chi so 0,1,2...
+
+        // Dich cac phan tu phia sau sang trai
+        for (int i = k; i < n - 1; i++) {
+
+            ds[i] = ds[i + 1];
+        }
+
+        n--;    // Giam so luong thuoc di 1
+
+        cout << "Xoa thuoc thanh cong!\n";
+    }
+};
+//==================================================
+// NHOM 4: XOA
+//==================================================
+
+void xoathuoc(Thuoc ds[], int &n) {
+
+    int k;                      // Vi tri can xoa
+
+    cout << "Nhap vi tri can xoa (1 -> "
+         << n
+         << "): ";
+
+    cin >> k;                   // Nhap vi tri can xoa
+
+    Thuoc t;                    // Tao doi tuong thuoc tam
+
+    t.xoa(ds, n, k);            // Goi ham xoa thuoc
