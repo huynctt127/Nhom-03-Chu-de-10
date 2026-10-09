@@ -1,0 +1,66 @@
+void timtheoma(Thuoc ds[], int n) {
+
+    string ma;                  // Luu ma thuoc can tim
+    bool timthay = false;       // Kiem tra co tim thay thuoc hay khong
+
+    cin.ignore();               // Xoa ky tu '\n' con lai trong bo nho dem
+
+    cout << "Nhap ma thuoc can tim: ";
+
+    getline(cin, ma);           // Nhap ma thuoc can tim
+
+    // Duyet qua tung thuoc trong danh sach
+    for (int i = 0; i < n; i++) {
+
+        // So sanh ma can tim voi ma cua tung thuoc
+        if (ds[i].getmathuoc() == ma) {
+
+            cout << "\nTim thay thuoc:\n";
+
+            ds[i].xuat();       // Xuat thong tin thuoc tim duoc
+
+            timthay = true;     // Danh dau la da tim thay
+
+            break;              // Tim thay roi thi dung vong lap
+        }
+    }
+
+    // Neu duyet het danh sach ma khong tim thay
+    if (!timthay) {
+
+        cout << "Khong tim thay thuoc!\n";
+    }
+}
+
+void timtheoten(Thuoc ds[], int n) {
+
+    string ten;                 // Luu ten thuoc can tim
+    bool timthay = false;       // Kiem tra co tim thay thuoc hay khong
+
+    cin.ignore();               // Xoa ky tu '\n' con lai
+
+    cout << "Nhap ten thuoc can tim: ";
+
+    getline(cin, ten);          // Nhap ten thuoc can tim
+
+    // Duyet qua toan bo danh sach thuoc
+    for (int i = 0; i < n; i++) {
+
+        // So sanh ten can tim voi ten thuoc
+        if (ds[i].gettenthuoc() == ten) {
+
+            cout << "\nTim thay thuoc:\n";
+
+            ds[i].xuat();       // Xuat thong tin thuoc tim duoc
+
+            timthay = true;     // Danh dau da tim thay
+        }
+    }
+
+    // Neu khong tim thay thuoc
+    if (!timthay) {
+
+        cout << "Khong tim thay thuoc!\n";
+    }
+}
+
